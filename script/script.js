@@ -46,23 +46,18 @@ for (let i = 0; i < 3; i++) {
         }
         if (i == 2) {
             siffror1.innerText = numbers[j];
+            siffror1.style.textAlign = "end";
         }
 
         if (i == 0 && (j == 4) || i == 2 && (j == 5) || i == 1 && (j == 8)) {
             siffror1.style.backgroundColor = "hsl(250,86%,87%)";
         }
         if (i == 1) {
-
+            siffror1.style.textAlign = "center";
             siffror1.style.order = (j - 9) * - 1;
         }
-        if (i == 1) {
-
-            siffror1.style.textAlign = "center";
-        }
-        if (i == 2) {
-
-            siffror1.style.textAlign = "end";
-        }
+      
+    
     }
 
 }
