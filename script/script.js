@@ -23,73 +23,46 @@ flexelement.style.justifyContent = "space-around";
 flexelement.style.padding = "50px";
 
 
+for (let i = 0; i < 3; i++) {
+    const ulhard = document.createElement('ol');
+    flexelement.appendChild(ulhard);
+    ulhard.style.border = "hsl(250,86%,87%) 10px solid";
+    ulhard.style.padding = "0";
+    ulhard.style.display = "flex";
+    ulhard.style.flexFlow = "column";
+    for (let j = 0; j < 10; j++) {
+        const siffror1 = document.createElement('li');
+        ulhard.appendChild(siffror1);
+        siffror1.innerText = j;
+        siffror1.style.width = "4vw";
+        siffror1.style.listStyleType = "none";
+        if (j % 2 == 0 && (i == 0 || i == 2)) {
+            siffror1.style.backgroundColor = "black";
+            siffror1.style.color = "white";
+        }
+        else if (j % 2 == 0 && (i == 1)) {
+            siffror1.style.backgroundColor = "black";
+            siffror1.style.color = "white";
+        }
+        if (i == 2) {
+            siffror1.innerText = numbers[j];
+        }
 
-//ul1
-const ul1 = document.createElement('ul');
-flexelement.appendChild(ul1);
-ul1.style.border = "hsl(250,86%,87%) 10px solid";
-ul1.style.padding = "0";
+        if (i == 0 && (j == 4) || i == 2 && (j == 5) || i == 1 && (j == 8)) {
+            siffror1.style.backgroundColor = "hsl(250,86%,87%)";
+        }
+        if (i == 1) {
 
+            siffror1.style.order = (j - 9) * - 1;
+        }
+        if (i == 1) {
 
-for (let i = 0; i < 10; i++) {
-    console.log(numbers[i]);
-    const siffror1 = document.createElement('li');
-    ul1.appendChild(siffror1);
-    siffror1.innerText = i;
-    siffror1.style.width = "4vw";
-    siffror1.style.listStyleType = "none";
-    if (i == 4) {
-        siffror1.style.backgroundColor = "hsl(250,86%,87%)";
+            siffror1.style.textAlign = "center";
+        }
+        if (i == 2) {
+
+            siffror1.style.textAlign = "end";
+        }
     }
-    else if (i % 2 == 0) {
-        siffror1.style.backgroundColor = "black";
-        siffror1.style.color = "white";
-    }
 
-
-}
-//andra ul
-
-const ul2 = document.createElement('ul');
-flexelement.appendChild(ul2);
-ul2.style.border = "hsl(250,86%,87%) 10px solid";
-ul2.style.padding = "0";
-
-for (let i = 9; i > -1; i = i - 1) {
-    console.log(numbers[i]);
-    const siffror2 = document.createElement('li');
-    ul2.appendChild(siffror2);
-    siffror2.innerText = i;
-    siffror2.style.width = "4vw";
-    siffror2.style.textAlign = "center";
-    siffror2.style.listStyleType = "none";
-    if (i % 2 == 0) {
-        siffror2.style.backgroundColor = "black";
-        siffror2.style.color = "white";
-    }
-    if (i == 8) {
-        siffror2.style.backgroundColor = "hsl(250,86%,87%)";
-    }
-}
-// ul3
-const ul3 = document.createElement('ul');
-flexelement.appendChild(ul3);
-ul3.style.border = "hsl(250,86%,87%) 10px solid";
-ul3.style.padding = "0";
-
-for (let i = 0; i < 10; i = i + 1) {
-    console.log(numbers[i]);
-    const siffror3 = document.createElement('li');
-    ul3.appendChild(siffror3);
-    siffror3.innerText = numbers[i];
-    siffror3.style.width = "4vw";
-    siffror3.style.textAlign = "right";
-    siffror3.style.listStyleType = "none";
-    if (i % 2 == 0) {
-        siffror3.style.backgroundColor = "black";
-        siffror3.style.color = "white";
-    }
-    if (i == 5) {
-        siffror3.style.backgroundColor = "hsl(250,86%,87%)";
-    }
 }
